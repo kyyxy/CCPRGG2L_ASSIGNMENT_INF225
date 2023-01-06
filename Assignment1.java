@@ -6,9 +6,9 @@ public class App {
     public static void main(String[] args) {
 
         // Java program to check if a student number is valid
-        Scanner scan = new Scanner(System.in);
+        Scanner emailscan = new Scanner(System.in);
         System.out.print("Enter Student Email Address : ");
-        String emailAdd = scan.nextLine();
+        String emailAdd = emailscan.nextLine();
 
         // Email address
         Pattern pattern = Pattern.compile("\\w+@students.national-u.edu.ph");
@@ -23,10 +23,14 @@ public class App {
         }
         
         // Phone Number
-        Pattern pattern = Pattern.compile("09\\d{9}");
-        Matcher matcher = pattern.matcher(emailAdd);
+        Scanner phonescan = new Scanner(System.in);
+        System.out.print("Enter Phone Number : ");
+        String phoneNum = phonescan.nextLine();
+        
+        pattern = Pattern.compile("09\\d{9}");
+        matcher = pattern.matcher(phoneNum);
 
-        boolean match = matcher.matches();
+        match = matcher.matches();
 
         if (match) {
             System.out.println("Valid Phone Number");
